@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-              sh 'systemctl restart petclinic'
+              sh 'sudo systemctl restart petclinic'
             }
         }
     }
