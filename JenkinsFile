@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Move') {
             steps {
+              sh 'mv target/*.jar target/spring.jar'
               sh 'mv target/*.jar /home/vagrant/data/'
               sh 'sudo chmod 777 /home/vagrant/data/*.jar'
             }
