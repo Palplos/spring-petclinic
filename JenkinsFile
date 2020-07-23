@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Move') {
             steps {
-              sh 'mv target/*.jar /home/var/data/'
+              sh 'mv target/*.jar /home/vagrant/data/'
             }
         }
         stage('Deploy') {
