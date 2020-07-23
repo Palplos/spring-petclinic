@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Package'
+                sh './mvnw package'
+            }
+        }
+        stage('Move') {
+            steps {
+              sh 'mv target/*.jar /home/var/data/'
+            }
+        }
+        stage('Deploy') {
+            steps {
+              sh 'systemctl restart petclinic'
+            }
+        }
+    }
+}
